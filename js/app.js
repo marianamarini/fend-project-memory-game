@@ -1,4 +1,5 @@
-/*
+/* Credit: Udacity Study Jam by Yahya Elharony on May 19 2018: 
+ * https://www.youtube.com/watch?v=G8J13lmApkQ
  * Create a list that holds all of your cards
  */
 
