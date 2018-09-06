@@ -16,9 +16,9 @@ body {
     padding: 0;
 }
 
-body {
+* body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    font-family: 'Lobster', cursive;
 }
 
 .container {
@@ -29,8 +29,9 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: font-family: 'Lobster', cursive; 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: purple;
 }
 
 /*
@@ -51,11 +52,39 @@ h1 {
     margin: 0 0 3em;
 }
 
+.startGame {
+  -moz-box-shadow: 9px 11px 10px 0px #3dc21b;
+	-webkit-box-shadow: 9px 11px 10px 0px #3dc21b;
+	box-shadow: 9px 11px 10px 0px #3dc21b;
+	background-color:#44c767;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:21px 48px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;  
+}
+
+.deck.hidden {
+  display: none;
+}
+
+.startGame.hidden {
+  display: none;
+}
+
 .deck .card {
     height: 125px;
     width: 125px;
     background: #2e3d49;
-    font-size: 0;
+    font-size: 0;      
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
@@ -65,20 +94,88 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+ 
 .deck .card.open {
     transform: rotateY(0);
     background: #02b3e4;
     cursor: default;
-}
+    /*background-image: url("../img/house.jpg");*/
+
+ }
+
+.deck .card.house {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/house.jpg");
+
+ }
+
+.deck .card.eye {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/eye.jpg");
+
+ }
+
+.deck .card.flowers {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/flowers.jpg");
+
+ }
+
+.deck .card.hand {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/hand.jpg");
+
+ }
+
+.deck .card.heart {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/heart.png");
+
+ }
+
+.deck .card.rainbow {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/rainbow.png");
+
+ }
+
+.deck .card.star {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/star.png");
+
+ }
+
+.deck .card.tabbycat {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+    background-image: url("../img/tabbycat.jpg");
+
+ }
 
 .deck .card.show {
     font-size: 33px;
 }
 
 .deck .card.match {
-    cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+    cursor: none;
+    pointer-events: none;
+    /*background: #02ccba;
+    font-size: 33px;*/
 }
 
 /*
@@ -103,7 +200,57 @@ h1 {
     display: inline-block;
 }
 
+.time {
+    list-style: none;
+    display: inline-block;
+}
+
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
+
+/* Modal by Richard Middleton https://www.youtube.com/watch?v=gLWIYk0Sd38 */
+
+ .modalBackground{
+    background-color: rgba(46, 61, 73, 0.5);
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    display: flex; /*toggle between display:flex and display:none to see/hide modal*/
+    justify-content: center;
+    align-items:center;
+ }
+
+
+ .modalContent {
+    font-family: Verdana;
+    height:250px;
+    width:450px;
+    border-radius: 20px;
+    background-color: #6e6fd3;
+    text-align: center;
+}
+
+.modalContent p {
+    font: Arial; 
+    font-size: 23px;
+}
+
+.reStartGame {
+  background-color: black;
+	border-radius:30px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:21px 48px;
+	text-decoration:none;
+}
+
+
+
+
