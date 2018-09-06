@@ -4,8 +4,16 @@
  Create a list that holds all of your cards
  */
  
- const squares = ["heart", "eye", "flowers", "hand", "house", "rainbow", "star", "tabbycat", "heart", "eye", "flowers", "hand", "house", "rainbow", "star", "tabbycat"];
  
+  // This array is all of the names for each image that will be inserted in the opened cards: 
+let squares = ["eye",  "flowers",  "hand",  "heart",  "house",  "rainbow",  "star",  "tabbycat",  "eye",  "flowers",  "hand",  "heart",  "house",  "rainbow",  "star",  "tabbycat"
+  ];
+
+
+const x = document.querySelector(".deck");
+const restart = document.querySelector(".restart");
+const startGame = document.querySelector(".startGame");
+const modal = document.querySelector(".modalBackground");
  
 /*
  * Display the cards on the page
