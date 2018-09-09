@@ -24,10 +24,11 @@ function brandNew(){
     });
 };
   
- //this is the game functionality:
  brandNew();
  
  function gameStart(){
+	 
+  //setting up the empty arrays and resetting timer:	 
    
   let openedCards = [];
   let array = [];
@@ -36,4 +37,24 @@ function brandNew(){
   let sec = 0;
   startGame.classList.add("hidden");
   x.className="deck";
+  
+    //counter function from Stackoverflow: https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
+  function pad ( val ) { return val > 9 ? val : "0" + val; };
+  
+  let timeInterval = setInterval( function(){
+     document.querySelector("#seconds").innerHTML=pad(++sec%60);
+     document.querySelector("#minutes").innerHTML=pad(parseInt(sec/60,10));
+     }, 1000);
+  
+  function myStopFunction() {
+      clearInterval(timeInterval);
+   };
+  
+  function myClearFunction(){
+     myStopFunction();
+     document.querySelector("#seconds").innerHTML=pad(00);
+     document.querySelector("#minutes").innerHTML=pad(00);
+     sec = 0;
+};
+  
    
