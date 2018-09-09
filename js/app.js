@@ -80,5 +80,22 @@ function brandNew(){
 
     shuffleArray(squares);
  
+   // this function resets the game:
+   function resetGame(){
+  myClearFunction();
+    openedCards = [];
+    arrray = [];
+    squares = [];
+    for (var i=0; i < matchedCards.length; i++) {
+      matchedCards[i].className = "card";
+    };
+    matchedCards = [];
+    x.classList.add("hidden");
+    startGame.className = "startGame";
+    let newstars = document.querySelector(".stars");
+    let resetstars = '<li><i class="fa fa-star"></i></li>';
+    newstars.innerHTML = resetstars + resetstars + resetstars + resetstars + resetstars + resetstars;
+    let resetmove = document.querySelector(".moves");
+    resetmove.innerHTML = 0;
+};
   
-   
