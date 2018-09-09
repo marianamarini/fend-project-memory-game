@@ -171,7 +171,18 @@ function cardmatch() {
         cardmatch();
        });
      };
-  };
+ };
  
    createCards(); 
+   
+   // restart button event listener:
+    restart.addEventListener("click", function(){
+    sec=0;
+    moveNumber = 0;
+    myStopFunction();
+    resetGame();    
+    });      
+     
+};
+
  
