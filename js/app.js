@@ -48,21 +48,37 @@ function brandNew(){
   
   function myStopFunction() {
       clearInterval(timeInterval);
-   };
+    };
   
   function myClearFunction(){
-     myStopFunction();
-     document.querySelector("#seconds").innerHTML=pad(00);
-     document.querySelector("#minutes").innerHTML=pad(00);
-     sec = 0;
-};
+        myStopFunction();
+        document.querySelector("#seconds").innerHTML=pad(00);
+        document.querySelector("#minutes").innerHTML=pad(00);
+        sec = 0;
+    };
+
+  // this function will count all the moves and remove stars after a certain # of moves:
+  
   function moveCount() {
-  moveNumber++;
-  let a = document.querySelector(".moves");
-  let stars = document.querySelector(".stars");
-  a.innerHTML = moveNumber;
-  if (moveNumber > 7 && stars.childNodes.length >0 && moveNumber % 3 == 0){
-      stars.removeChild(stars.childNodes[0]);
-    }
-  };
+      moveNumber++;
+      let a = document.querySelector(".moves");
+      let stars = document.querySelector(".stars");
+      a.innerHTML = moveNumber;
+      if (moveNumber > 7 && stars.childNodes.length >0 && moveNumber % 3 == 0){
+          stars.removeChild(stars.childNodes[0]);
+        }
+    };
+  // this function will shuffle the cards:
+  // ES6 shuffle function from stack overflow: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/12646864#12646864
+
+  function shuffleArray(array) {
+     for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+     };
+    };
+
+    shuffleArray(squares);
+ 
+  
    
