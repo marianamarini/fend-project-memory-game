@@ -98,4 +98,56 @@ function brandNew(){
     let resetmove = document.querySelector(".moves");
     resetmove.innerHTML = 0;
 };
+
+//this function manages whether the cards match or not and what happens to them:
+function cardmatch() {
+  if (openedCards.length >= 2) {
+    let firstCard = openedCards[0];
+    let secondCard = openedCards[1];
+    let card1 = array[0];
+    let card2 = array[1];
+    if (firstCard === secondCard) {
+      card1.classList.add("match");
+      card2.classList.add("match");
+      matchedCards.push(card1);
+      matchedCards.push(card2);
+      array = [];
+      openedCards = [];
+    } else {
+      function closeCards() {
+        card1.className = "card";
+        card2.className = "card";
+        openedCards = [];
+        array = [];
+        } setTimeout(closeCards, 400);
+    }
+    moveCount();
+    if (matchedCards.length == 16) {
+       myStopFunction();
+       let secs = document.querySelector("#seconds").innerHTML;
+       let mins = document.querySelector("#minutes").innerHTML;
+       document.querySelector("#secondsModal").innerHTML=secs;
+       document.querySelector("#minutesModal").innerHTML=mins;
+       let littlestars = document.querySelector(".stars");
+       let starscore = document.querySelector("#starsModal");
+       let finalscore = littlestars.children.length;
+       starscore.innerHTML=finalscore;
+       let finalMoves = document.querySelector(".moves").innerHTML;
+       document.querySelector(".movesModal").innerHTML=finalMoves;
+       console.log("game over");
+       let x = document.querySelector(".deck");
+       x.classList.add("hidden");
+       let modal = document.querySelector(".modalBackground");
+       modal.style.display = "flex";
+       let restartGame = document.querySelector(".reStartGame");
+       restartGame.addEventListener("click", function(){
+       let modal = document.querySelector(".modalBackground");
+       modal.style.display = "none";
+       myClearFunction();
+       resetGame();
+       });
+      };
+    };
+  };
+
   
