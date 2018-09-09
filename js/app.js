@@ -150,4 +150,28 @@ function cardmatch() {
     };
   };
 
-  
+    
+  //this function goes over each squares array element and creates a card per array item:
+ function createCards() {
+    for (i = 0; i < squares.length; i++) {
+        //We now create the "unclicked" cards by appending all "li" items to the deck class:
+        const listofCards = document.createElement("li");
+        listofCards.classList.add("card");
+        x.appendChild(listofCards);
+        //we are grabbing the name of each array element and we will use it as a class name for the clicked card in the event listener:
+        let image = `${squares[i]}`;
+        //we now set up the event listener that will display the opened card when clicked
+        listofCards.addEventListener("click", function openCards() {
+        //We add the proper classes to the clicked cards so the images display when clicked:
+        listofCards.classList.add("open", "show", image);
+        //We now push the clicked card name to the opened cards array:
+        openedCards.push(`${image}`);
+        //to make it easier to manipulate each element, we add the full element to another array:
+        array.push(this);
+        cardmatch();
+       });
+     };
+  };
+ 
+   createCards(); 
+ 
