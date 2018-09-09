@@ -24,4 +24,16 @@ function brandNew(){
     });
 };
   
+ //this is the game functionality:
  brandNew();
+ 
+ function gameStart(){
+   
+  let openedCards = [];
+  let array = [];
+  let matchedCards = [];
+  let moveNumber = 0;
+  let sec = 0;
+  startGame.classList.add("hidden");
+  x.className="deck";
+   
