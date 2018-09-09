@@ -56,5 +56,13 @@ function brandNew(){
      document.querySelector("#minutes").innerHTML=pad(00);
      sec = 0;
 };
-  
+  function moveCount() {
+  moveNumber++;
+  let a = document.querySelector(".moves");
+  let stars = document.querySelector(".stars");
+  a.innerHTML = moveNumber;
+  if (moveNumber > 7 && stars.childNodes.length >0 && moveNumber % 3 == 0){
+      stars.removeChild(stars.childNodes[0]);
+    }
+  };
    
